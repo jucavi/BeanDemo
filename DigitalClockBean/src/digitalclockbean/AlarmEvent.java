@@ -4,16 +4,18 @@
  */
 package digitalclockbean;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.EventObject;
 
 /**
  *
  * @author kaos
  */
-public class AlarmEvent extends EventObject {
-    
+public class AlarmEvent extends EventObject implements Serializable {
+
     public AlarmEvent(Object source) {
         super(source);
     }
-    
+
 }

@@ -4,12 +4,15 @@
  */
 package digitalclockbean;
 
+import java.io.Serializable;
+import java.util.EventListener;
+
 /**
  *
  * @author kaos
  */
-public interface AlarmListener {
-    
-    public void launcAlarm(AlarmEvent event);
-    
+public interface AlarmListener extends EventListener, Serializable {
+
+    public void launchAlarm(AlarmEvent event);
+
 }

@@ -6,7 +6,6 @@ package digitalclockbean;
 
 import java.awt.Component;
 import java.beans.PropertyEditorSupport;
-import java.time.LocalDateTime;
 
 /**
  *
@@ -34,10 +33,14 @@ public class AlarmPropertyEditorSupport extends PropertyEditorSupport {
         boolean active = alarmPanel.getSelectedValue().isActive();
         String message = alarmPanel.getSelectedValue().getMessage();
 
+        if (message.isBlank()) {
+            message = "Mensaje por defecto";
+        }
+
         return "new digitalclockbean.Alarm("
                 + hour + ", "
                 + minute + ", "
-                + active 
+                + active
                 + ", \"" + message + "\")";
     }
 
